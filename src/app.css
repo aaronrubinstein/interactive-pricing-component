@@ -1,0 +1,54 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-family: 'Manrope', sans-serif;
+	font-size: 16px;
+}
+
+input, button, textarea, select {
+	font: inherit;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+body {
+
+	/* Primary */
+
+	--full-slider-bar: hsl(174, 77%, 80%);
+	--slider-background: hsl(174, 86%, 45%);
+	--slider-background-active: hsl(174, 65%, 41%);
+	--discount-background: hsl(15, 90%, 95%);
+	--discount-text: hsl(15, 100%, 70%);
+	--cta-text: hsl(226, 100%, 87%);
+	--toggle-background-active: hsl(174, 73%, 70%);
+
+	/* Neutral */
+
+	--card-background: hsl (0, 0%, 100%);
+	--page-background: hsl(230, 100%, 99%);
+	--empty-slider-bar: hsl(225, 64%, 95%);
+	--toggle-background: hsl(224, 49%, 87%);
+	--text: hsl(226, 20%, 60%);
+	--text-and-cta-background: hsl(227, 35%, 25%);
+
+	min-height: 100dvh;
+	background-color: var(--page-background);
+
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
