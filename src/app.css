@@ -10,6 +10,7 @@
 :root {
 	font-family: 'Manrope', sans-serif;
 	font-size: 16px;
+	--slider-shade-pct: 50%;
 }
 
 input, button, textarea, select {
@@ -23,28 +24,26 @@ button {
 
 body {
 
-	/* Primary */
+	/* Colors */
 
-	--full-slider-bar: hsl(174, 77%, 80%);
-	--slider-bg: hsl(174, 86%, 45%);
-	--slider-bg-active: hsl(174, 65%, 41%);
+	--slider-track-full: hsl(174, 77%, 80%);
+	--slider-track-empty: hsl(225, 64%, 95%);
+	--slider-thumb: hsl(174, 86%, 45%);
+	--slider-thumb-active: hsl(174, 65%, 41%);
 	--discount-bg: hsl(15, 90%, 95%);
 	--discount-text: hsl(15, 100%, 70%);
+	--text: hsl(226, 20%, 60%);
 	--cta-text: hsl(226, 100%, 87%);
-	--toggle-bg-active: hsl(174, 73%, 70%);
-
-	/* Neutral */
-
+	--toggle-bg: hsl(224, 49%, 87%);
+	--toggle-hover: hsl(174, 73%, 70%);
 	--card-bg: hsl(0, 0%, 100%);
 	--page-bg: hsl(230, 100%, 99%);
-	--empty-slider-bar: hsl(225, 64%, 95%);
-	--toggle-bg: hsl(224, 49%, 87%);
-	--text: hsl(226, 20%, 60%);
 	--text-and-cta-bg: hsl(227, 35%, 25%);
 
 	min-height: 100dvh;
 	background-color: var(--page-bg);
-
+	background-image: url('/images/bg-pattern.svg');
+	background-repeat: no-repeat;
 }
 
 #app {
