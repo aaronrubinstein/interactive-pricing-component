@@ -11,9 +11,9 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 
 **Desktop**
 
-<img src="./solution/desktop.png" height=90% width=90%>
+<img src="./solution/desktop.png" height=100% width=100%>
 
 
 **Mobile**
 
-<img src="./solution/mobile.png" height=30% width=30%>
+<img src="./solution/mobile.png" height=40% width=34%>
