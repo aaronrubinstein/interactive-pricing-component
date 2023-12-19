@@ -18,7 +18,7 @@
 <header>
     <h1>Simple, traffic-based pricing</h1>
     <p>Sign-up for our 30-day trial. No credit card required.</p>
-    <img src="/images/pattern-circles.svg" alt="Circles">
+    <img src="images/pattern-circles.svg" alt="Circles">
 </header>
 
 <main>
@@ -64,15 +64,15 @@
     <div class="lower-section">
         <div class="features">
             <div class="feature">
-                <img src="/images/icon-check.svg" alt="Check mark">
+                <img src="images/icon-check.svg" alt="Check mark">
                 <span class="feature-text">Unlimited websites</span>
             </div>
             <div class="feature">
-                <img src="/images/icon-check.svg" alt="Check mark">
+                <img src="images/icon-check.svg" alt="Check mark">
                 <span class="feature-text">100% data ownership</span>
             </div>
             <div class="feature">
-                <img src="/images/icon-check.svg" alt="Check mark">
+                <img src="images/icon-check.svg" alt="Check mark">
                 <span class="feature-text">Email reports</span>
             </div>
         </div>
