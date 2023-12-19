@@ -30,7 +30,7 @@
         bottom: 0;
         border-radius: 22px;
         background: var(--toggle-bg);
-        /* transition: .4s; */
+        transition: background-color .4s;
     }
 
     .slider:before {

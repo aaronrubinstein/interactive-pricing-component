@@ -22,11 +22,25 @@
 </header>
 
 <main>
-    <div class="top-row">
-        <span class="plan-name">
-            {plans[selectedPlan].name}
-        </span>
-        <span class="price-container">
+    <div class="upper-section">
+        <div class="top-row">
+            <span class="plan-name">
+                {plans[selectedPlan].name}
+            </span>
+            <span class="price-container">
+                <span class="price">
+                    ${(yearlyBilling ? (plans[selectedPlan].price - (plans[selectedPlan].price * .25)) : plans[selectedPlan].price)
+                        .toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                </span>
+                <span class="price-period">
+                    / {yearlyBilling ? 'year' : 'month'}
+                </span>
+            </span>
+        </div>
+    
+        <Slider bind:value={selectedPlan} max={plans.length - 1} />
+        
+        <span class="price-container-mobile">
             <span class="price">
                 ${(yearlyBilling ? (plans[selectedPlan].price - (plans[selectedPlan].price * .25)) : plans[selectedPlan].price)
                     .toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
@@ -35,20 +49,19 @@
                 / {yearlyBilling ? 'year' : 'month'}
             </span>
         </span>
+        
+        <div class="billing-controls">
+            <span class="billing-option">Monthly Billing</span>
+            <Toggle bind:yearlyBilling={yearlyBilling} />
+            <span class="billing-option yearly">
+                Yearly Billing
+                <span class="discount">25% discount</span>
+                <span class="discount-mobile">25%</span>
+            </span>
+        </div>
     </div>
 
-    <Slider bind:value={selectedPlan} max={plans.length - 1} />
-    
-    <div class="billing-controls">
-        <span class="billing-option">Monthly Billing</span>
-        <Toggle bind:yearlyBilling={yearlyBilling} />
-        <span class="billing-option yearly">
-            Yearly Billing
-            <span class="discount">25% discount</span>
-        </span>
-    </div>
-
-    <div class="bottom-row">
+    <div class="lower-section">
         <div class="features">
             <div class="feature">
                 <img src="/images/icon-check.svg" alt="Check mark">
@@ -99,11 +112,12 @@
     
     main {
         width: 540px;
-        /* height: 397px; */
         border-radius: 8px;
         background: var(--card-bg);
-        border-radius: 8px;
         box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.15);
+    }
+
+    .upper-section {
         padding: 40px 48px 0px 48px;
     }
 
@@ -142,6 +156,10 @@
         margin-left: 8px;
     }
 
+    .price-container-mobile {
+        display: none;
+    }
+
     .billing-controls {
         display: flex;
         justify-content: center;
@@ -161,7 +179,7 @@
         position: relative;
     }
 
-    .discount {
+    .discount, .discount-mobile {
         position: absolute;
         right: -89px;
         width: 80px;
@@ -175,9 +193,14 @@
         line-height: 19px;
     }
 
-    .bottom-row {
+    .discount-mobile {
+        display: none;
+    }
+
+    .lower-section {
         height: 135px;
         border-top: 1px solid #ECF0FB;
+        padding: 0 48px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -211,14 +234,102 @@
         font-weight: 800;
         color: var(--cta-text);
         cursor: pointer;
+        transition: color .2s;
     }
 
     button:hover {
         color: #FFF;
     }
 
+    @media (max-width: 570px) {
 
+        header {
+            margin-top: 89px;
+            margin-bottom: 64px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
 
+        p {
+            font-size: 13px;
+            line-height: 23px;
+        }    
+        
+        main {
+            width: 327px;
+        }
 
+        .upper-section {
+            padding: 34px 24px 0px 24px;
+        }
 
+        .top-row {
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .plan-name {
+            font-size: 12px;
+            letter-spacing: 1.714px;
+        }
+
+        .price-container {
+            display: none;
+        }
+
+        .price-container-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+        }
+
+        .price {
+            font-size: 32px;
+            letter-spacing: -0.8px;
+        }
+
+        .price-period {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .billing-controls {
+            gap: 12px;
+            margin-top: 34px;
+            margin-bottom: 38px;
+            margin-left: -12px;
+        }
+
+        .discount {
+            display: none;
+        }
+        
+        .discount-mobile {
+            display: inline;
+            right: -47px;
+            width: 41px;
+        }
+
+        .lower-section {
+            height: 200px;
+            padding: 24px 0 32px 0;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 11px;
+        }
+    }
+     
 </style>

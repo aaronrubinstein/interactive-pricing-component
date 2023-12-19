@@ -60,6 +60,7 @@
         box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.60);
         /* to vertically center thumb: margin-top = (track height in pixels / 2) - (thumb height in pixels /2)  */
         margin-top: -16px;
+        transition: background-color .2s;
     }
 
     input[type="range"]::-moz-range-thumb {
